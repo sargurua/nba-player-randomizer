@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 
 import MenuForm from './MenuForm'
 
+import 'react-notifications/lib/notifications.css';
 import {Icon, Header} from 'semantic-ui-react'
-import Alert from 'react-bootstrap/Alert'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 export default class Menu extends Component {
     state = {
@@ -15,25 +16,18 @@ export default class Menu extends Component {
         const selected = event.target.children[0].children[0].children[0].textContent
 
         if (selected === 'Num of Players') {
-            this.setState({
-                error: true
-            })
+            NotificationManager.info('Choose your Number of Players', 'Hold up', 3000, null, null)
+        }
+        else {
+            console.log(selected)
         }
     }
 
     render() {
         return (
             <div>
-                {
-                    this.state.error 
-                    ? 
-                        <Alert key='alert' variant='primary'>
-                            Please Choose Your Number of Players
-                        </Alert>
-                    : 
-                        null
-                }
-                 <Header as='h2' icon>
+                <NotificationContainer/>
+                <Header as='h2' icon>
                     <Icon name='basketball ball' color='orange'/>
                     NBA Player Randomizer
                 </Header>
