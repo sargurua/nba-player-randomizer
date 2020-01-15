@@ -1,11 +1,10 @@
 import React from 'react'
-import { Dropdown, Button } from 'semantic-ui-react'
-import { tsPropertySignature } from '@babel/types'
+import { Form, Dropdown, Button } from 'semantic-ui-react'
 
 const options = [
   { key: 1, text: 1, value: 1 },
   { key: 2, text: 2, value: 2 },
-  { key: 3, text: 3, value: 3 },
+  { key: 3, text: 3, value: '3' },
   { key: 4, text: 4, value: 4 },
   { key: 5, text: 5, value: 5 },
   { key: 6, text: 6, value: 6 },
@@ -20,11 +19,14 @@ const options = [
   { key: 15, text: 15, value: 15 }
 ]
 
-const NumDropdown = (props) => (
+const MenuForm = ({handleSubmit}) => (
     <>
-        <Dropdown placeholder='Num of Players' fluid selection options={options} />
-        <Button content='Submit'onClick={props.onSubmit}/>
+      <Form  onSubmit={handleSubmit}>
+        <Form.Dropdown placeholder='Num of Players' fluid selection options={options} />
+
+        <Button type='submit' content='Submit' />
+      </Form>
     </>
 )
 
-export default NumDropdown
+export default MenuForm
