@@ -8,6 +8,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 export default class Menu extends Component {
     state = {
+        loading: undefined,
         error: false,
         players: []
     }
@@ -19,7 +20,20 @@ export default class Menu extends Component {
             NotificationManager.info('Choose your Number of Players', 'Hold up', 3000, null, null)
         }
         else {
-            console.log(selected)
+            const reqObj = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    num_players: parseInt(selected)
+                })
+            }
+            console.log(reqObj, parseInt(selected))
+            fetch('http://localhost:3000/random', reqObj)
+            .then(resp => resp.json())
+            .then(json => console.log(json))
         }
     }
 
