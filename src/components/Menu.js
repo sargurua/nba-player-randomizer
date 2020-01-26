@@ -4,7 +4,7 @@ import MenuForm from './MenuForm'
 
 import 'react-notifications/lib/notifications.css';
 import {Icon, Header} from 'semantic-ui-react'
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import {NotificationManager} from 'react-notifications';
 
 export default class Menu extends Component {
     state = {
@@ -33,18 +33,13 @@ export default class Menu extends Component {
             console.log(reqObj, parseInt(selected))
             fetch('http://localhost:3000/random', reqObj)
             .then(resp => resp.json())
-            .then(json => console.log(json))
+            .then(json => this.props.displayPlayers(json))
         }
     }
 
     render() {
         return (
             <div>
-                <NotificationContainer/>
-                <Header as='h2' icon>
-                    <Icon name='basketball ball' color='orange'/>
-                    NBA Player Randomizer
-                </Header>
                 <MenuForm handleSubmit={this.handleSubmit}/>
             </div>
         )
