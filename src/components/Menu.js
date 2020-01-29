@@ -31,7 +31,7 @@ export default class Menu extends Component {
                 })
             }
             console.log(reqObj, parseInt(selected))
-            fetch('http://localhost:3000/random', reqObj)
+            fetch('https://shielded-plains-12735.herokuapp.com/random', reqObj)
             .then(resp => resp.json())
             .then(json => this.props.displayPlayers(json))
         }
