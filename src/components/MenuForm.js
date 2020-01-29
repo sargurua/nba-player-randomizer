@@ -21,8 +21,8 @@ const options = [
 
 const MenuForm = ({handleSubmit}) => (
     <>
-      <Form  onSubmit={handleSubmit}>
-        <Form.Dropdown placeholder='Number of Players' fluid selection options={options} />
+      <Form size="small" onSubmit={handleSubmit}>
+        <Form.Dropdown style={{margin: '20px auto', width: '25%'}} placeholder='Number of Players' fluid selection options={options} />
 
         <Button color="orange" type='submit' content='Submit' />
       </Form>

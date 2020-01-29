@@ -2,15 +2,20 @@ import React, {Component} from 'react'
 
 import PlayerCard from './PlayerCard'
 
+import { fadeIn } from 'react-animations'
 import { Button, Grid, Card } from 'semantic-ui-react'
 
 export default class PlayerDisplay extends Component {
 
     renderDisplay = () => {
-        let i = 0
+        const style = {
+            fadeIn: {
+                animation: 'x 3s'
+            }
+        }
         
         return(
-            <Card.Group itemsPerRow={5} centered>
+            <Card.Group style={style.fadeIn, {marginTop: '50px'}} itemsPerRow={5} centered>
                 {this.props.players.map(player => {
                     return (
                         <div key={player.name}>
@@ -27,7 +32,7 @@ export default class PlayerDisplay extends Component {
         return(
             <div>
                 {this.renderDisplay()}
-                <Button color='orange' onClick={this.props.goBack}>Go Back</Button>
+                <Button style={{marginTop: '50px'}} color='orange' onClick={this.props.goBack}>Back</Button>
             </div>
         )
     }

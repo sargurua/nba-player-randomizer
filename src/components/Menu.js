@@ -16,7 +16,7 @@ export default class Menu extends Component {
     handleSubmit = event => {
         const selected = event.target.children[0].children[0].children[0].textContent
 
-        if (selected === 'Num of Players') {
+        if (selected === 'Number of Players') {
             NotificationManager.info('Choose your Number of Players', 'Hold up', 3000, null, null)
         }
         else {
