@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Dropdown, Button } from 'semantic-ui-react'
+import { Form, Checkbox, Button } from 'semantic-ui-react'
 
 const options = [
   { key: 1, text: 1, value: 1 },
@@ -23,7 +23,7 @@ const MenuForm = ({handleSubmit}) => (
     <>
       <Form size="small" onSubmit={handleSubmit}>
         <Form.Dropdown style={{margin: '20px auto', width: '25%'}} placeholder='Number of Players' fluid selection options={options} />
-
+        <Form.Checkbox label="Top 250 Players"/>
         <Button color="orange" type='submit' content='Submit' />
       </Form>
     </>
