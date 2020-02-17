@@ -24,6 +24,7 @@ const MenuForm = ({handleSubmit}) => (
       <Form size="small" onSubmit={handleSubmit}>
         <Form.Dropdown style={{margin: '20px auto', width: '25%'}} placeholder='Number of Players' fluid selection options={options} />
         <Form.Checkbox label="Top 250 Players"/>
+        <Form.Checkbox label="At Least 2 Fowards, Guards and Centers"/>
         <Button color="orange" type='submit' content='Submit' />
       </Form>
     </>
