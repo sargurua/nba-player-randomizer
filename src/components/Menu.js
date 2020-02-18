@@ -10,7 +10,9 @@ export default class Menu extends Component {
     state = {
         loading: undefined,
         error: false,
-        players: []
+        players: [],
+        top250: false,
+        positonRequirement: false
     }
 
     handleSubmit = event => {
@@ -37,10 +39,17 @@ export default class Menu extends Component {
         }
     }
 
+    handleTop250Change = event => {
+        console.log(this.state.top250)
+        this.setState({
+            top250: !this.state.top250
+        })
+    }
+
     render() {
         return (
             <div>
-                <MenuForm handleSubmit={this.handleSubmit}/>
+                <MenuForm handleTop250Change={this.handleTop250Change} handleSubmit={this.handleSubmit}/>
             </div>
         )
         
