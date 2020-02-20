@@ -29,7 +29,9 @@ export default class Menu extends Component {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    num_players: parseInt(selected)
+                    num_players: parseInt(selected),
+                    posReq: this.state.positonRequirement,
+                    top250: this.state.top250
                 })
             }
             console.log(reqObj, parseInt(selected))
