@@ -46,10 +46,17 @@ export default class Menu extends Component {
         })
     }
 
+    handlePosReqChange = event => {
+        console.log(this.state.positonRequirement)
+        this.setState({
+            positonRequirement: !this.state.positonRequirement
+        })
+    }
+
     render() {
         return (
             <div>
-                <MenuForm handleTop250Change={this.handleTop250Change} handleSubmit={this.handleSubmit}/>
+                <MenuForm handlePosReqChange={this.handlePosReqChange} handleTop250Change={this.handleTop250Change} handleSubmit={this.handleSubmit}/>
             </div>
         )
         

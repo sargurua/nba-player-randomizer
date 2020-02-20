@@ -19,12 +19,12 @@ const options = [
   { key: 15, text: 15, value: 15 }
 ]
 
-const MenuForm = ({handleSubmit, handleTop250Change}) => (
+const MenuForm = ({handleSubmit, handleTop250Change, handlePosReqChange}) => (
     <>
       <Form size="small" style={{width: '50%', marginRight: "auto", marginLeft: "auto"}} onSubmit={handleSubmit}>
         <Form.Dropdown style={{margin: '20px auto', width: '25%'}} placeholder='Number of Players' fluid selection options={options} />
         <Form.Checkbox onChange={handleTop250Change} label="Top 250 Players"/>
-        <Form.Checkbox label="At Least 2 Fowards, Guards and Centers"/>
+        <Form.Checkbox onChange={handlePosReqChange} label="At Least 2 Fowards, Guards and Centers"/>
         <Button color="orange" type='submit' content='Submit' />
       </Form>
     </>
